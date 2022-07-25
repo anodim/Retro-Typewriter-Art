@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 class Solution
 {
-    public void Main(string[] args)
+    public static void Main(string[] args)
     {
         string input = Console.ReadLine();
 
@@ -25,22 +25,22 @@ class Solution
             else if (strCmd.EndsWith("bS"))
             {
                 strInt = strCmd.Substring(0, strCmd.Length - 2);
-                cmd.Chara = "\\";
+                cmd.Chara = '\\';
             }
             else if (strCmd.EndsWith("sQ"))
             {
                 strInt = strCmd.Substring(0, strCmd.Length - 2);
-                cmd.Chara = "'";
+                cmd.Chara = '\'';
             }
-            else if (strCmd.EndsWith("sQ"))
+            else if (strCmd.EndsWith("nl"))
             {
-                strInt = strCmd.Substring(0, strCmd.Length - 2);
-                cmd.Chara = "\n";
+                strInt = "1";
+                cmd.Chara = '\n';
             }
             else
             {
                 strInt = strCmd.Substring(0, strCmd.Length - 1);
-                cmd.Chara = strCmd.Substring(strCmd.Length - 1);
+                cmd.Chara = strCmd.Last();
             }
 
             cmd.Nb = int.Parse(strInt);
@@ -62,7 +62,7 @@ class Solution
         public Cmd()
         {
             Nb = 0;
-            Chara = "";
+            Chara = '^';
         }
 
         public override string ToString()
