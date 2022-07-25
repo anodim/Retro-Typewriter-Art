@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 class Solution
 {
-    static void Main(string[] args)
+    public void Main(string[] args)
     {
         string input = Console.ReadLine();
 
@@ -53,28 +53,27 @@ class Solution
             Console.Write(cmd.ToString());
         }
     }
-}
 
-
-class Cmd
-{
-    public int Nb { get; set; }
-    public char Chara { get; set; }
-
-    public Cmd()
+    public class Cmd
     {
-        Nb = 0;
-        Chara = "";
-    }
+        public int Nb { get; set; }
+        public char Chara { get; set; }
 
-    public override async string ToString()
-    {
-        string aReturn = "";
-        for (int i = 0; i < Nb; ++i)
+        public Cmd()
         {
-            aReturn += Chara;
+            Nb = 0;
+            Chara = "";
         }
 
-        return aReturn;
+        public override string ToString()
+        {
+            string aReturn = "";
+            for (int i = 0; i < Nb; ++i)
+            {
+                aReturn += Chara;
+            }
+
+            return aReturn;
+        }
     }
 }
